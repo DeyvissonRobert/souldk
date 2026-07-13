@@ -1,0 +1,12 @@
+{
+  "name": "SoulDK",
+  "short_name": "SoulDK",
+  "description": "Experiências digitais inteligentes. Landing Pages, Atendimento Inteligente e o DKX — Diagnóstico Inteligente de Experiência Digital.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#0F172A",
+  "theme_color": "#0F172A",
+  "icons": [
+    { "src": "assets/logo.png", "sizes": "178x180", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

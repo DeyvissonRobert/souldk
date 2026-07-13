@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DKX | Diagnóstico Inteligente de Experiência Digital — SoulDK</title>
+<meta name="description" content="Execute o DKX: o diagnóstico inteligente da SoulDK que analisa a experiência digital da sua empresa em poucos minutos.">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#0F172A">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/dkx.css">
+</head>
+<body class="dkx-body" data-theme="dark">
+
+<header class="dkx-topbar">
+  <a href="index.html" class="brand"><img src="assets/Logo-redonda.png" alt=""> SoulDK</a>
+  <a href="index.html" class="dkx-exit" aria-label="Sair do DKX">✕</a>
+</header>
+
+<main class="dkx-stage">
+
+  <!-- TELA 1 — CARD DE APRESENTAÇÃO -->
+  <section class="dkx-screen dkx-intro" id="screenIntro">
+    <div class="dkx-intro-card">
+      <span class="badge">DKX · Diagnóstico Inteligente</span>
+      <h1>Vamos diagnosticar sua experiência digital.</h1>
+      <p>Em menos de 2 minutos nossa inteligência analisa a presença digital da sua empresa e identifica oportunidades para melhorar atendimento, automação, conversão e experiência do cliente.</p>
+
+      <ul class="dkx-intro-meta">
+        <li><i>🧠</i>10 perguntas inteligentes</li>
+        <li><i>✨</i>100% gratuito</li>
+        <li><i>⏱️</i>duração aproximada de 2 minutos</li>
+      </ul>
+
+      <button class="btn btn-primary btn-lg" id="startDiagnosis">Iniciar Diagnóstico</button>
+    </div>
+  </section>
+
+  <!-- TELA 2 — CARREGAMENTO (ENGINE) -->
+  <section class="dkx-screen dkx-splash" id="screenLoading" hidden>
+    <div class="logo-orbit"><img src="assets/logo.png" alt="SoulDK"></div>
+    <h1>DKX</h1>
+    <p class="sub">Sistema Inteligente de Diagnóstico</p>
+    <div class="dkx-loadbar">
+      <div class="track"><i id="loadingBar"></i></div>
+      <ul class="dkx-load-messages" id="loadingMessages"></ul>
+    </div>
+  </section>
+
+  <!-- TELA 3 — NOME DA EMPRESA -->
+  <section class="dkx-screen" id="screenName" hidden>
+    <div class="dkx-question">
+      <div class="qnum">Antes de começar</div>
+      <h2>Qual é o nome da sua empresa ou negócio?</h2>
+      <form class="dkx-name-form" id="nameForm">
+        <input type="text" id="companyName" class="dkx-input" placeholder="Digite o nome da empresa" autocomplete="organization" required>
+        <button type="submit" class="btn btn-primary btn-lg">Continuar</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- TELA 4 — CABEÇALHO + PERGUNTAS -->
+  <section class="dkx-screen" id="screenQuestionWrap" hidden>
+    <div class="dkx-qheader">
+      <span class="badge">Diagnóstico de Experiência Digital</span>
+    </div>
+    <div class="dkx-progress" id="dkxProgress"><i id="dkxProgressFill"></i></div>
+    <div class="dkx-step-label" id="dkxStepLabel"></div>
+    <div id="screenQuestion"></div>
+  </section>
+
+  <!-- TELA 5 — CALCULANDO -->
+  <section class="dkx-screen dkx-analysis" id="screenAnalysis" hidden>
+    <div class="rings"><span></span><span></span><span></span></div>
+    <h2>Calculando seu resultado…</h2>
+  </section>
+
+  <!-- TELA 6 — RESULTADO -->
+  <section class="dkx-screen dkx-results" id="screenResults" hidden>
+    <div class="head">
+      <span class="badge">Diagnóstico concluído</span>
+      <h2 id="resultCompanyTitle">Seu diagnóstico está pronto.</h2>
+    </div>
+
+    <div class="score-gauge">
+      <svg viewBox="0 0 200 200">
+        <defs>
+          <linearGradient id="scoreGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#6D4AFF"/>
+            <stop offset="50%" stop-color="#7C3AED"/>
+            <stop offset="100%" stop-color="#00E5FF"/>
+          </linearGradient>
+        </defs>
+        <circle class="track" cx="100" cy="100" r="88"></circle>
+        <circle class="progress" id="scoreCircle" cx="100" cy="100" r="88"></circle>
+      </svg>
+      <div class="value">
+        <span class="num" id="scoreNumber">0</span>
+        <span class="label">Score Global</span>
+      </div>
+    </div>
+
+    <div class="dkx-classification" id="dkxClassification">
+      <span class="chip-class" id="classChip"></span>
+      <p id="classDesc"></p>
+    </div>
+
+    <div class="dkx-bars" id="dkxBars"></div>
+
+    <div class="dkx-insights">
+      <p class="dkx-insights-title">Diagnóstico Inteligente</p>
+      <div id="dkxInsightsList"></div>
+    </div>
+
+    <div class="dkx-final-block">
+      <p>Nossa equipe pode analisar seu resultado e apresentar soluções específicas para o seu negócio.</p>
+      <button class="btn btn-primary btn-lg" id="sendDiagnosis">Enviar meu Diagnóstico DKX</button>
+    </div>
+  </section>
+
+  <!-- TELA 7 — FINAL -->
+  <section class="dkx-screen dkx-done" id="screenDone" hidden>
+    <div class="check">✓</div>
+    <h2>Diagnóstico enviado com sucesso.</h2>
+    <p>Nossa equipe analisará seu resultado e retornará com sugestões personalizadas. Enquanto isso, conheça alguns projetos desenvolvidos pela SoulDK.</p>
+    <div class="actions">
+      <a href="index.html#portfolio" class="btn btn-primary">Ver Projetos</a>
+      <a href="index.html" class="btn btn-secondary">Voltar ao Site</a>
+    </div>
+  </section>
+
+</main>
+
+<script src="js/dkx.js" defer></script>
+</body>
+</html>
