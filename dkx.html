@@ -14,8 +14,12 @@
 <body class="dkx-body" data-theme="dark">
 
 <header class="dkx-topbar">
-  <a href="index.html" class="brand"><img src="assets/Logo-redonda.png" alt=""> SoulDK</a>
-  <a href="index.html" class="dkx-exit" aria-label="Sair do DKX">✕</a>
+    <a href="index.html" class="brand"><img src="assets/Logo-redonda.png" alt=""> SoulDK</a>
+    <a href="index.html" class="dkx-exit" aria-label="Sair do DKX">✕</a>
+  <div class="topbar-progress">
+    <div class="dkx-progress" id="dkxProgress"><i id="dkxProgressFill"></i></div>
+    <div class="dkx-step-label" id="dkxStepLabel"></div>
+  </div>  
 </header>
 
 <main class="dkx-stage">
@@ -39,7 +43,7 @@
 
   <!-- TELA 2 — CARREGAMENTO (ENGINE) -->
   <section class="dkx-screen dkx-splash" id="screenLoading" hidden>
-    <div class="logo-orbit"><img src="assets/logo.png" alt="SoulDK"></div>
+    <div class="logo-orbit"><img src="assets/Logo-redonda.png" alt="SoulDK"></div>
     <h1>DKX</h1>
     <p class="sub">Sistema Inteligente de Diagnóstico</p>
     <div class="dkx-loadbar">
@@ -65,8 +69,7 @@
     <div class="dkx-qheader">
       <span class="badge">Diagnóstico de Experiência Digital</span>
     </div>
-    <div class="dkx-progress" id="dkxProgress"><i id="dkxProgressFill"></i></div>
-    <div class="dkx-step-label" id="dkxStepLabel"></div>
+
     <div id="screenQuestion"></div>
   </section>
 

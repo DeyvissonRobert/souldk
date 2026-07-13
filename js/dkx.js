@@ -172,11 +172,8 @@
     "Inicializando DKX...",
     "Carregando módulos...",
     "Analisando estrutura...",
-    "Processando experiência digital...",
-    "Comparando padrões...",
-    "Calculando indicadores...",
-    "Gerando recomendações...",
     "Preparando diagnóstico...",
+    "Conectando inteligência...",
   ];
   const loadingBar = document.getElementById("loadingBar");
   const loadingList = document.getElementById("loadingMessages");

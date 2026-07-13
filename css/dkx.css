@@ -20,15 +20,17 @@ body.dkx-body {
   padding: var(--sp-3) var(--sp-4);
   position: relative;
   z-index: 20;
+  flex-direction: column;
+}
+
+.topbar-progress {
+  margin-top: 20px;
 }
 
 .dkx-topbar .brand {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 26px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }
 
 .dkx-topbar .brand img {
@@ -48,8 +50,9 @@ body.dkx-body {
   color: var(--text-secondary);
   font-size: 16px;
   transition: all var(--d-hover) var(--ease);
-  right: 50px;
-  position: fixed;
+  right: 30px;
+  top: 30px;
+  position: absolute;
 }
 
 .dkx-exit:hover {
@@ -59,13 +62,12 @@ body.dkx-body {
 }
 
 .dkx-progress {
-  position: relative;
-  height: 4px;
+  position: absolute;
+  left: 0;
+  height: 6px;
+  width: 100%;
   background: var(--border);
   overflow: hidden;
-  border-radius: 4px;
-  max-width: 460px;
-  margin: 0 auto;
 }
 
 .dkx-progress i {
@@ -75,6 +77,7 @@ body.dkx-body {
   background: var(--gradient-premium);
   transition: width .5s var(--ease);
   box-shadow: 0 0 10px rgba(0, 229, 255, .6);
+  border-radius: 5px;
 }
 
 .dkx-step-label {
@@ -84,6 +87,7 @@ body.dkx-body {
   padding: var(--sp-1) 0 0;
   font-weight: 600;
   letter-spacing: .03em;
+  margin-top: 3px;
 }
 
 .dkx-stage {
@@ -570,7 +574,7 @@ body.dkx-body {
 .score-gauge {
   position: relative;
   width: 220px;
-  height: 220px;
+  height: 250px;
   margin: 0 auto var(--sp-4);
 }
 
